@@ -8,3 +8,25 @@
   <li><%= review.comment %> | <%= review.created_at %></li>
   <% end %>
 </ul>
+
+
+<%= form_for ([@product, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id = "error_explanation">
+      <p><%= pluralize(@review.errors.count, "error") %>prohibited this review from being saved: </p>
+      <ul>
+        <% @reviews.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end  %>
+
+  <p>
+    <%= f.label :comment, "New Review" %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
