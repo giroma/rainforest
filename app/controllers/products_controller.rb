@@ -8,10 +8,8 @@ class ProductsController < ApplicationController
 
     if @product.save
       flash.notice = 'Saved succesfully'
-
       redirect_to @product
     else
-      flash.notice = "Save failed"
       render :new
     end
   end
@@ -33,11 +31,9 @@ class ProductsController < ApplicationController
     #
     if @product.update(product_params)
       flash.notice = 'Saved succesfully'
-
       redirect_to @product
     else
-      flash.notice = "Save failed"
-      render :new
+      render :edit
     end
 
     # render plain: params[:product].inspect
@@ -46,6 +42,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+    flash.notice = "Delete successful"
     redirect_to products_path
   end
 end
