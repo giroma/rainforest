@@ -7,8 +7,11 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
+      flash.notice = 'Saved succesfully'
+
       redirect_to @product
     else
+      flash.notice = "Save failed"
       render :new
     end
   end
