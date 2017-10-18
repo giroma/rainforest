@@ -1,6 +1,6 @@
 <h1>Products</h1>
 <ul>
   <% @products.each do |product| %>
-  <li><%= link_to "#{product.name}", product_path(product.id) %> | <%= product.price %> cents | <%= product.description %></li>
+  <li><%= link_to "#{product.name}", product_path(product.id) %> | <%= price_in_dollars(product.price) %> | <%= product.description %></li>
   <% end %>
 </ul>
