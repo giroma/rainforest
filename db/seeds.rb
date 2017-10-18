@@ -11,3 +11,11 @@ Product.create(name: 'banana', description: 'Goes bad fast, but protein!', price
 Product.create(name: 'orange', description: "Doesn't rhyme!", price: 70)
 Product.create(name: 'avocado', description: "Hipsters love these!", price: 190)
 Product.create(name: 'grapes', description: "You can make wine!", price: 260)
+
+
+Review.create(comment: "love apples", product_id: 1)
+Review.create(comment: "so good eh", product_id: 1)
+Review.create(comment: "so good eh", product_id: 2)
+Review.create(comment: "so good eh", product_id: 3)
+Review.create(comment: "so good eh", product_id: 4)
+Review.create(comment: "so good eh", product_id: 5)
