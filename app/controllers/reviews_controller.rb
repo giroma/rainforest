@@ -2,9 +2,6 @@ class ReviewsController < ApplicationController
 
   def create
 
-
-
-
     @review = Review.new(
     comment: params[:review][:comment],
     product_id: params[:product_id]
@@ -22,6 +19,11 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.find(params[:id])
+
+    
 
   end
 
